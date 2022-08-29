@@ -16,33 +16,33 @@ router.get("/new", (req, res) => {
 
 // create route
 // POST request for adding new post to posts DB
-router.post('/', async (req, res) => {
-    const createdPost = req.body;
+router.post('/trips', async (req, res) => {
+    const createdTrip = req.body;
     try {
-        const newPost = await db.Trips.create(createdPost);
-        console.log(newPost);
-        res.redirect('/posts');
+        const newTrip = await db.Trips.create(createdTrip);
+        console.log(newTrip);
+        res.redirect('/trips');
     } catch (err) {
         console.log(err);
     }
 })
 
 // show route
-router.get('/:postIndex', async (req, res) => {
+router.get('/:tripIndex', async (req, res) => {
     try{
-        const foundPost = await db.Trips.findById(req.params.postIndex)
-        res.render('show.ejs', { post: foundPost, id: foundPost._id});
+        const foundTrip = await db.Trips.findById(req.params.tripIndex)
+        res.render('show.ejs', { post: foundTrip, id: foundTrip._id});
     } catch(err) {
         console.log(err);
     }
 })
 
 // index route
-router.get('/', async (req, res) => {
+router.get('/trips', async (req, res) => {
     try{
-        const allPosts = await db.Trips.find()
-        const context = { posts: allPosts};
-        console.log(allPosts)
+        const allTrips = await db.Trips.find()
+        const context = { posts: allTrips};
+        console.log(allTrips)
         res.render('index.ejs', context);
     } catch(err) {
         console.log(err);
