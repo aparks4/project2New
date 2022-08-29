@@ -1,13 +1,26 @@
+// importing statements
 const express = require('express');
 
-
+// app configuration
 const app = express();
 const PORT = 4000;
 
+app.set('view engine', 'ejs');
 
+// MIDDLEWARE
+app.use(express.static('public'));
+app.use(methodOverride('_method'));
+
+
+// ROUTES
 // home route
 app.get('/', (req, res) => {
-    res.send('hi there');
+    res.render('home.ejs');
+})
+
+// 404 Wildcard Route
+app.route('/*').all((req,res)=>{
+    res.render('404')
 })
 
 
