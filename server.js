@@ -1,5 +1,7 @@
 // importing statements
 const express = require('express');
+const methodOverride = require('method-override');
+
 
 // app configuration
 const app = express();
@@ -18,10 +20,16 @@ app.get('/', (req, res) => {
     res.render('home.ejs');
 })
 
+app.get('/new', (req, res) => {
+    res.render('new.ejs');
+})
+
 // 404 Wildcard Route
 app.route('/*').all((req,res)=>{
     res.render('404')
 })
+
+
 
 
 // SERVER
