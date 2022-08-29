@@ -71,6 +71,17 @@ router.get('/:tripId/edit', async (req, res) => {
     }
 })
 
+// update route
+router.put('/:tripId', async (req, res) => {
+    try{
+        const updatedTrip = req.body;
+        await db.Trips.findByIdAndUpdate(req.params.tripId, updatedTrip, { new:true})
+        res.redirect(`/trips/${req.params.tripId}`)
+    }catch(err){
+        console.log(err);
+    }
+})
+
 
 
 module.exports = router;
