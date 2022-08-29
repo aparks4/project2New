@@ -49,6 +49,17 @@ router.get('/trips', async (req, res) => {
     }
 })
 
+// destroy route
+router.delete('/:tripId', async (req, res) => {
+    try{
+        const foundTrip = await db.Trips.findByIdAndDelete(req.params.tripId);
+        console.log(foundTrip);
+        return res.redirect('/trips');
+    } catch(err) {
+        console.log(err);
+    }
+})
+
 
 
 module.exports = router;
