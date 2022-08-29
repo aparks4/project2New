@@ -7,6 +7,67 @@
     <title>Create Page</title>
 </head>
 <body>
-    
+    <h1>Plan a New Trip:</h1>
+    <div>
+        <form action="/trips" method="POST">
+            <div>
+                <label for="trip-name">Trip Name</label>
+                <input
+                    type="text"
+                    placeholder="2022 Fall Rager"
+                    name="trip-name"
+                    id="trip-name"
+                >
+            </div>
+            <div>
+                <label for="dates">Dates</label>
+                <input  
+                    type="text"
+                    placeholder="Nov 1 - Nov 10"
+                    name="dates"
+                    id="dates"
+                >
+            </div>
+            <div>
+                <label for="destination">Destination</label>
+                <input
+                    type="text"
+                    placeholder="Newport Beach, CA"
+                    name="destination"
+                    id="destination"
+                >
+            </div>
+            <div>
+                <label for="picture">Picture</label>
+                <input 
+                    type="text"
+                    placeholder="http://"
+                    name="picture"
+                    id="picture"
+                >
+            </div>
+            <div>
+                <label for="people">People</label>
+                <input
+                    type="text"
+                    placeholder="Mom, Dad, Grandma"
+                    name="people"
+                    id="people"
+                >
+            </div>
+            <div>
+                <label for="activities">Activities</label>
+                <input 
+                    type="text"
+                    placeholder="Surfing, snorkelling, raging"
+                    name="activities"
+                    id="activities"
+                >
+            </div>
+            <div>
+                <button class="button is-info">Create This Trip</button>
+            </div>
+        </form>
+    </div>
 </body>
 </html>
