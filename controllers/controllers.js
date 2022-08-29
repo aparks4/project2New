@@ -37,6 +37,18 @@ router.get('/:postIndex', async (req, res) => {
     }
 })
 
+// index route
+router.get('/', async (req, res) => {
+    try{
+        const allPosts = await db.Trips.find()
+        const context = { posts: allPosts};
+        console.log(allPosts)
+        res.render('index.ejs', context);
+    } catch(err) {
+        console.log(err);
+    }
+})
+
 
 
 module.exports = router;
