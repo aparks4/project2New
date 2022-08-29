@@ -60,6 +60,17 @@ router.delete('/:tripId', async (req, res) => {
     }
 })
 
+// edit route
+router.get('/:tripId/edit', async (req, res) => {
+    try{
+        const foundTrip = await db.Products.findById(req.params.tripId);
+        console.log(foundTrip)
+        res.render('edit.js', { trip: foundTrip, id: foundTrip._id });
+    } catch(err) {
+        console.log(err);
+    }
+})
+
 
 
 module.exports = router;
