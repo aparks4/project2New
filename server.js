@@ -2,6 +2,8 @@
 const express = require('express');
 const methodOverride = require('method-override');
 
+// CONTROLLER IMPORTS
+const controllers = require('./controllers/controllers')
 
 // app configuration
 const app = express();
@@ -13,15 +15,14 @@ app.set('view engine', 'ejs');
 app.use(express.static('public'));
 app.use(methodOverride('_method'));
 
+// Router 
+app.use('/', controllers);
+
 
 // ROUTES
 // home route
 app.get('/', (req, res) => {
     res.render('home.ejs');
-})
-
-app.get('/new', (req, res) => {
-    res.render('new.ejs');
 })
 
 // 404 Wildcard Route
