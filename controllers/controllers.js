@@ -24,6 +24,7 @@ router.post('/trips', async (req, res) => {
         res.redirect('/trips');
     } catch (err) {
         console.log(err);
+        next()
     }
 })
 
@@ -34,6 +35,7 @@ router.get('/:tripIndex', async (req, res) => {
         res.render('show.ejs', { post: foundTrip, id: foundTrip._id});
     } catch(err) {
         console.log(err);
+        next()
     }
 })
 
@@ -46,6 +48,7 @@ router.get('/trips', async (req, res) => {
         res.render('index.ejs', context);
     } catch(err) {
         console.log(err);
+        next()
     }
 })
 
@@ -57,6 +60,7 @@ router.delete('/:tripId', async (req, res) => {
         return res.redirect('/trips');
     } catch(err) {
         console.log(err);
+        next()
     }
 })
 
@@ -68,6 +72,7 @@ router.get('/:tripId/edit', async (req, res) => {
         res.render('edit.js', { trip: foundTrip, id: foundTrip._id });
     } catch(err) {
         console.log(err);
+        next()
     }
 })
 
@@ -79,6 +84,7 @@ router.put('/:tripId', async (req, res) => {
         res.redirect(`/trips/${req.params.tripId}`)
     }catch(err){
         console.log(err);
+        next()
     }
 })
 
