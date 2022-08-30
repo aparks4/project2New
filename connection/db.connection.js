@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 require('dotenv').config();
 
 // update <username> and <password> with your credentials
-const connectionStr = process.env.MONGODB_URI;
+const connectionStr = process.env.MONGODB_URI
 
 console.log(connectionStr)
 mongoose.connect(connectionStr)
