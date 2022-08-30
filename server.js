@@ -15,8 +15,7 @@ app.set('view engine', 'ejs');
 app.use(express.static('public'));
 app.use(methodOverride('_method'));
 
-// Router 
-app.use('/', controllers);
+
 
 
 // ROUTES
