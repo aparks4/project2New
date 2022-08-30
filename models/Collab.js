@@ -2,10 +2,11 @@ const mongoose = require('mongoose')
 
 const collabData = new mongoose.Schema(
     {
+        tripName:{type:String},
         tripId:{type:String},
         userId:{type:String},
         comments:{type:Array},
     })
 
-const Cities = mongoose.model('Collab', locationData)
-module.exports = Cities
+const Collab = mongoose.model('Collab', collabData)
+module.exports = Collab
