@@ -28,3 +28,9 @@ db.Collab.create(
     userId:"Samantha",
     comments:["Such a good idea","I don't like carnival rides but everyone else should go!"]
 })
+
+db.User.create({
+
+    
+
+})
