@@ -10,21 +10,21 @@
     <div>
         <form action="/trips/<%= id %>?_method=PUT" method="POST">
             <div>
-                <label for="trip-name">Trip Name</label>
+                <label for="tripName">Trip Name</label>
                 <input
                     type="text"
                     placeholder="name of trip"
-                    name="trip-name"
-                    value="<%= trip.name %>"
+                    name="tripName"
+                    value="<%= trip.tripName %>"
                 >
             </div>
             <div>
-                <label for="dates">Dates</label>
+                <label for="date">Dates</label>
                 <input 
                     type="text"
-                    placeholder="dates"
-                    name="dates"
-                    value="<%= trip.dates %>"
+                    placeholder="date"
+                    name="date"
+                    value="<%= trip.date %>"
                 >
             </div>
             <div>
@@ -73,19 +73,16 @@
                 >
             </div>
             <div>
-                <label for="user">User</label>
+                <label for="userId">User</label>
                 <input 
                     type="text"
-                    placeholder="user"
-                    name="user"
-                    value="<%= trip.user %>"
+                    placeholder="userId"
+                    name="userId"
+                    value="<%= trip.userId %>"
                 >
             </div>
             <div>
-                <input
-                    type="submit"
-                    value="Submit Changes"
-                >
+                <input type="submit" value="Submit Changes">
             </div>
         </form>
     </div>
