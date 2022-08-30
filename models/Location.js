@@ -11,7 +11,6 @@ const locationData = new mongoose.Schema(
             required:true,
             maxLength: 2
         },
-        
         tripId:{
             type:Array
         }

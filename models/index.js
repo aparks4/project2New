@@ -1,4 +1,5 @@
 module.exports = {
     Cities : require("./Location.js"),
-    Trip: require("./Trips.js")
+    Trips: require("./Trips.js"),
+    Reviews: require("./Collab.js")
 }

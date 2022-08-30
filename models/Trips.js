@@ -4,6 +4,7 @@ const tripData = new mongoose.Schema(
     {
         tripName:{
             type:String},
+        date:{type:Date},
         city: {
             type:String,
             required:true
@@ -12,14 +13,13 @@ const tripData = new mongoose.Schema(
             type:String,
             required:true,
             maxLength: 2
-            
         },
         activities:{type:Array},
         photos:{type:String},
         active:{type:Boolean},
-        user:{type:String},
+        userId:{type:Array},
 
 })
 
-const Trip = mongoose.model('Trip', tripData)
-module.exports = Trip
+const Trips = mongoose.model('Trip', tripData)
+module.exports = Trips
