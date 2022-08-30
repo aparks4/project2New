@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const mongoose = require('mongoose');
+require('../connection/db.connection')
 
 // MIDDLEWARE
 router.use(express.json());
