@@ -30,7 +30,7 @@ db.Collab.create(
 })
 
 db.User.create({
-
+     username: "nath",
+     password: "cake"
     
-
-})
+    })

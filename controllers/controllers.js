@@ -31,7 +31,7 @@ router.post('/trips', async (req, res, next) => {
 })
 
 // show route
-router.get('/:tripIndex', async (req, res, next) => {
+router.get('/trips/:tripIndex', async (req, res, next) => {
     try{
         const foundTrip = await db.Trips.findById(req.params.tripIndex)
         res.render('show.ejs', { post: foundTrip, id: foundTrip._id});
@@ -55,9 +55,9 @@ router.get('/trips', async (req, res, next) => {
 })
 
 // destroy route
-router.delete('/:tripId', async (req, res, next) => {
+router.delete('/trips/:tripIndex', async (req, res, next) => {
     try{
-        const foundTrip = await db.Trips.findByIdAndDelete(req.params.tripId);
+        const foundTrip = await db.Trips.findByIdAndDelete(req.params.tripIndex);
         console.log(foundTrip);
         return res.redirect('/trips');
     } catch(err) {
@@ -67,11 +67,11 @@ router.delete('/:tripId', async (req, res, next) => {
 })
 
 // edit route
-router.get('/:tripId/edit', async (req, res, next) => {
+router.get('/trips/:tripIndex/edit', async (req, res, next) => {
     try{
-        const foundTrip = await db.Products.findById(req.params.tripId);
+        const foundTrip = await db.Trips.findById(req.params.tripIndex);
         console.log(foundTrip)
-        res.render('edit.js', { trip: foundTrip, id: foundTrip._id });
+        res.render('edit.ejs', { trip: foundTrip, id: foundTrip._id });
     } catch(err) {
         console.log(err);
         next()
@@ -79,11 +79,11 @@ router.get('/:tripId/edit', async (req, res, next) => {
 })
 
 // update route
-router.put('/:tripId', async (req, res, next) => {
+router.put('/trips/:tripIndex', async (req, res, next) => {
     try{
         const updatedTrip = req.body;
-        await db.Trips.findByIdAndUpdate(req.params.tripId, updatedTrip, { new:true})
-        res.redirect(`/trips/${req.params.tripId}`)
+        await db.Trips.findByIdAndUpdate(req.params.tripIndex, updatedTrip, {new: true});
+        res.redirect(`/trips/${req.params.tripIndex}`);
     }catch(err){
         console.log(err);
         next()
