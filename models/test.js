@@ -21,7 +21,7 @@ db.Trips.create({
     userId:["Samantha","Aryn","Nathalie"]
 
 })
-db.Reviews.create(
+db.Collab.create(
 {
     tripName:"Family Reunion",
     tripId:"2233",
