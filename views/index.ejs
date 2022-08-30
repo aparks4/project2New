@@ -7,6 +7,14 @@
     <title>Trip Index</title>
 </head>
 <body>
-    
+    <div>
+        <h2>EXPLORE</h2>
+    </div>
+    <div>
+        <% for(let i = 0; i < trips.length; i++) { %>
+            <% const firsttrip = trips[i] %>
+            <a href="/trips/<%= firstTrip._id %>"><%= firstTrip.name %></a>
+        <% } %>
+    </div>
 </body>
 </html>
