@@ -41,7 +41,7 @@ router.get('/:tripIndex', async (req, res) => {
 router.get('/trips', async (req, res) => {
     try{
         const allTrips = await db.Trips.find()
-        const context = { posts: allTrips};
+        const context = { posts: allTrips };
         console.log(allTrips)
         res.render('index.ejs', context);
     } catch(err) {
