@@ -2,8 +2,9 @@
 const express = require('express');
 const methodOverride = require('method-override');
 
-// CONTROLLER IMPORTS
+// CONTROLLERS IMPORTS
 const controllers = require('./controllers/controllers')
+const userControllers = require('./controllers/user_controller')
 
 // app configuration
 const app = express();
@@ -15,9 +16,9 @@ app.set('view engine', 'ejs');
 app.use(express.static('public'));
 app.use(methodOverride('_method'));
 
-// Router 
+// Routers
 app.use('/', controllers);
-
+app.use('/users', userControllers);
 
 // ROUTES
 // home route
