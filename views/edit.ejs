@@ -7,6 +7,87 @@
     <title>Edit Page</title>
 </head>
 <body>
-    
+    <div>
+        <form action="/trips/<%= id %>?_method=PUT" method="POST">
+            <div>
+                <label for="trip-name">Trip Name</label>
+                <input
+                    type="text"
+                    placeholder="name of trip"
+                    name="trip-name"
+                    value="<%= trip.name %>"
+                >
+            </div>
+            <div>
+                <label for="dates">Dates</label>
+                <input 
+                    type="text"
+                    placeholder="dates"
+                    name="dates"
+                    value="<%= trip.dates %>"
+                >
+            </div>
+            <div>
+                <label for="city">City</label>
+                <input  
+                    type="text"
+                    placeholder="city"
+                    name="city"
+                    value="<%= trip.city %>"
+                >
+            </div>
+            <div>
+                <label for="state">State</label>
+                <input
+                    type="text"
+                    placeholder="state"
+                    name="state"
+                    value="<%= trip.state %>"
+                >
+            </div>
+            <div>
+                <label for="activities">Activities</label>
+                <input 
+                    type="text"
+                    placeholder="activities"
+                    name="activities"
+                    value="<%= trip.activities %>"
+                >
+            </div>
+            <div>
+                <label for="photos">Photos</label>
+                <input 
+                    type="text"
+                    placeholder="http://"
+                    name="photos"
+                    value="<%= trip.photos %>"
+                >
+            </div>
+            <div>
+                <label for="active">Active</label>
+                <input
+                    type="boolean"
+                    placeholder= "status"
+                    name="active"
+                    value="<%= trip.active %>"
+                >
+            </div>
+            <div>
+                <label for="user">User</label>
+                <input 
+                    type="text"
+                    placeholder="user"
+                    name="user"
+                    value="<%= trip.user %>"
+                >
+            </div>
+            <div>
+                <input
+                    type="submit"
+                    value="Submit Changes"
+                >
+            </div>
+        </form>
+    </div>
 </body>
 </html>

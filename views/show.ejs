@@ -7,7 +7,44 @@
     <title>Show Page</title>
 </head>
 <body>
-    <h1><%= trip.name %></h1>
+    <div>
+        <h1>Trip Name: <%= trip.name %></h1>
+        <h3>Trip Dates: <%= trip.dates %></h3>
+        <h3>City: <%= trip.city %></h3>
+        <h3>State: <%= trip.state %></h3>
+        <h3>Activities: <%= trip.activities %></h3>
+        <img src="<%= trip.photos %>" style="max-width: 500px;" />
+        <h3>Active: <%= trip.active %></h3>
+        <h3>User: <%= trip.user %></h3>
+    </div>
+    <div>
+        <h4>Comments:</h4>
+        <form action="/trips/<%= id %>" method="POST">
+            <div>
+                Add a comment:
+                <textarea name="comment">
+
+                </textarea>
+            </div>
+            <div>
+                <input 
+                    name="trip" 
+                    type="hidden" 
+                    value="<%= id %>"
+                >
+            </div>
+        </form>
+    </div>
+    <div>
+       <form action="/trips/<%= id %>?_method=DELETE" method="POST">
+        <input
+            class="button is-danger"
+            type="submit"
+            value="Delete This Trip"
+        >
+        <button type="submit">Post Comment</button>
+       </form> 
+    </div>
     
 </body>
 </html>
