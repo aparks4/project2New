@@ -18,7 +18,7 @@ router.get("/new", (req, res) => {
 
 // create route
 // POST request for adding new post to posts DB
-router.post('/trips', async (req, res) => {
+router.post('/trips', async (req, res, next) => {
     const createdTrip = req.body;
     try {
         const newTrip = await db.Trips.create(createdTrip);
@@ -31,7 +31,7 @@ router.post('/trips', async (req, res) => {
 })
 
 // show route
-router.get('/:tripIndex', async (req, res) => {
+router.get('/:tripIndex', async (req, res, next) => {
     try{
         const foundTrip = await db.Trips.findById(req.params.tripIndex)
         res.render('show.ejs', { post: foundTrip, id: foundTrip._id});
@@ -42,7 +42,7 @@ router.get('/:tripIndex', async (req, res) => {
 })
 
 // index route
-router.get('/trips', async (req, res) => {
+router.get('/trips', async (req, res, next) => {
     try{
         const allTrips = await db.Trips.find()
         const context = { posts: allTrips };
@@ -55,7 +55,7 @@ router.get('/trips', async (req, res) => {
 })
 
 // destroy route
-router.delete('/:tripId', async (req, res) => {
+router.delete('/:tripId', async (req, res, next) => {
     try{
         const foundTrip = await db.Trips.findByIdAndDelete(req.params.tripId);
         console.log(foundTrip);
@@ -67,7 +67,7 @@ router.delete('/:tripId', async (req, res) => {
 })
 
 // edit route
-router.get('/:tripId/edit', async (req, res) => {
+router.get('/:tripId/edit', async (req, res, next) => {
     try{
         const foundTrip = await db.Products.findById(req.params.tripId);
         console.log(foundTrip)
@@ -79,7 +79,7 @@ router.get('/:tripId/edit', async (req, res) => {
 })
 
 // update route
-router.put('/:tripId', async (req, res) => {
+router.put('/:tripId', async (req, res, next) => {
     try{
         const updatedTrip = req.body;
         await db.Trips.findByIdAndUpdate(req.params.tripId, updatedTrip, { new:true})
