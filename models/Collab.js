@@ -8,5 +8,5 @@ const collabData = new mongoose.Schema(
         comments:{type:Array},
     })
 
-const Reviews = mongoose.model('Collab', collabData)
-module.exports = Reviews
+const Collab = mongoose.model('Collab', collabData)
+module.exports = Collab
