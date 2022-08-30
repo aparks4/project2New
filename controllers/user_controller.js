@@ -21,9 +21,10 @@ router.get('/register', (req, res) => {
 router.post('/login', async (req, res, next) => {
     try {
         let formData = req.body;
-        let foundUser = await User.findOne({email: formData.email});
+        console.log(formData.username);
+        let foundUser = await User.findOne({username: formData.username});
         if(!foundUser) {
-            return res.redirect('/register')
+            return res.redirect('/users/register')
         } else {
             const match = await bcrypt.compare(formData.password, foundUser.password);
             console.log(match);
@@ -43,9 +44,9 @@ router.post('/login', async (req, res, next) => {
 router.post('/register', async (req, res, next) => {
     try {
         let formData = req.body;
-        let foundUser = await User.exists({email: formData.email});
+        let foundUser = await User.exists({username: formData.username});
         if(foundUser) {
-            return res.redirect('/login')
+            return res.redirect('/users/login')
         } else {
             let salt = await bcrypt.genSalt(12);
             console.log(`My salt is ${salt}`)
@@ -55,7 +56,7 @@ router.post('/register', async (req, res, next) => {
 
             const newUser = await User.create(formData);
             console.log(`My new user is ${newUser}`)
-            return res.redirect('/login')
+            return res.redirect('/users/login')
         }
         } catch(err) {
            console.log(err);
@@ -66,7 +67,7 @@ router.post('/register', async (req, res, next) => {
 router.get("/logout", async function (req, res) {
     try {
         await req.session.destroy();
-        return res.redirect("/login");
+        return res.redirect("/users/login");
         } catch(error) {
         console.log(error);
         return res.send(error);

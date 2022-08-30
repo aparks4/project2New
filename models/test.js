@@ -30,12 +30,9 @@ const mongoose = require('mongoose');
 // })
 
 
-// db.User.create({
-//     username:"hello",
-//     password:"goodbye"
-// })
-
-db.Cities.create({
-    city: "Newport Beach",
-    state: "CA"
+db.User.create({
+    
+    username: 'pete davidson',
+    password: 'hiii'
 })
+
