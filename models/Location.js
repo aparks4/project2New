@@ -12,7 +12,8 @@ const locationData = new mongoose.Schema(
             maxLength: 2
         },
         tripId:{
-            type:Array
+            type: mongoose.Types.ObjectId,
+            ref: "Trips"
         }
     })
 

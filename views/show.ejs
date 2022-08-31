@@ -7,6 +7,8 @@
     <title>Show Page</title>
 </head>
 <body>
+    <%- include('partials/nav') %>
+
     <div>
         <h1>Trip Name: <%= post.tripName %></h1>
         <h3>Trip Dates: <%= post.date %></h3>
@@ -19,12 +21,12 @@
     </div>
     <div>
         <h4>Comments:</h4>
-        <form action="/trips/<%= id %>" method="POST">
+        <form action="/trips/<%= post._id %>" method="POST">
             <div>
-                Add a comment:
-                <textarea name="comment">
+                <label for="comment">Comments:</label>
+                    <textarea name="comment">
 
-                </textarea>
+                    </textarea>
             </div>
             <div>
                 <input 
@@ -33,6 +35,7 @@
                     value="<%= id %>"
                 >
             </div>
+            <button type="submit">Post Comment</button>
         </form>
     </div>
     <div>
@@ -42,7 +45,6 @@
             type="submit"
             value="Delete This Trip"
         >
-        <button type="submit">Post Comment</button>
        </form> 
     </div>
     <div>

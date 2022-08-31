@@ -40,8 +40,7 @@ router.post('/', async (req, res, next) => {
 
 router.delete('/:id', async (req, res, next) => {
     res.send('comment delete')
-    next()
-})
+  })
 
 
 module.exports = router;
