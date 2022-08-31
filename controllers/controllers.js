@@ -41,6 +41,7 @@ router.get('/trips/:tripIndex', async (req, res, next) => {
     }
 })
 
+
 // index route
 router.get('/trips', async (req, res, next) => {
     try{

@@ -37,7 +37,6 @@ app.use(
 app.use('/', controllers);
 app.use('/users', userControllers);
 
-
 // ROUTES
 // home route
 app.get('/', (req, res) => {
