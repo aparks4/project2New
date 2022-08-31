@@ -6,8 +6,8 @@ const MongoStore = require('connect-mongo');
 require('dotenv').config();
 
 // CONTROLLERS IMPORTS
-const controllers = require('./controllers/controllers')
-const userControllers = require('./controllers/user_controller')
+const controllers = require('./controllers/controllers');
+const userControllers = require('./controllers/user_controller');
 
 // app configuration
 const app = express();
