@@ -7,6 +7,8 @@
     <title>Edit Page</title>
 </head>
 <body>
+    <%-include('partials/nav') %>
+
     <div>
         <form action="/trips/<%= id %>?_method=PUT" method="POST">
             <div>
