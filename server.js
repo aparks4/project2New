@@ -6,8 +6,9 @@ const MongoStore = require('connect-mongo');
 require('dotenv').config();
 
 // CONTROLLERS IMPORTS
-const controllers = require('./controllers/controllers')
-const userControllers = require('./controllers/user_controller')
+const controllers = require('./controllers/controllers');
+const userControllers = require('./controllers/user_controller');
+const collabController = require('./controllers/collab_controller');
 
 // app configuration
 const app = express();
@@ -36,6 +37,7 @@ app.use(
 // Routers
 app.use('/', controllers);
 app.use('/users', userControllers);
+app.use('/', collabController);
 
 // ROUTES
 // home route

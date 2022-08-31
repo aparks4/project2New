@@ -18,20 +18,22 @@ router.get('/', async (req, res, next) => {
     }
 });
 
-router.get('/:id/', async (req, res, next) => {
+router.get('/trips/:tripIndex', async (req, res, next) => {
     try {
-        const foundComment = await db.Collab.findById(req.params.id).populate('trips').exec()
-        res.render('comments/show.ejs', { comments: foundComment })
+        const allComments = await db.Collab.find().populate('trips').exec();
+        res.render('show.ejs', { comments: allComments })
+        console.log(allComments);
     } catch (err) {
         console.log(err)
         next()
     }
 })
 
-router.post('/', async (req, res, next) => {
+router.post('/trips/:tripIndex', async (req, res, next) => {
     try{
         const newComment = await db.Collab.create(req.body)
-        re.redirect('/comments/' + newComment._id)
+        console.log(newComment)
+        res.redirect(`/trips/${req.params.tripIndex}`)
     } catch(err) {
         console.log(err)
         next()

@@ -30,11 +30,24 @@ router.post('/trips', async (req, res, next) => {
     }
 })
 
+router.post('/trips/:tripIndex', async (req, res, next) => {
+    try{
+        const newComment = await db.Collab.create(req.body)
+        console.log(newComment)
+        res.redirect(`/trips/${req.params.tripIndex}`)
+    } catch(err) {
+        console.log(err)
+        next()
+    }
+})
+
 // show route
 router.get('/trips/:tripIndex', async (req, res, next) => {
     try{
-        const foundTrip = await db.Trips.findById(req.params.tripIndex)
-        res.render('show.ejs', { post: foundTrip, id: foundTrip._id});
+        const foundTrip = await db.Trips.findById(req.params.tripIndex);
+        const foundComments = await db.Collab.find({tripId: foundTrip._id});
+        console.log(foundComments);
+        res.render('show.ejs', { post: foundTrip, id: foundTrip._id, comments: foundComments});
     } catch(err) {
         console.log(err);
         next()
