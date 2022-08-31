@@ -30,9 +30,9 @@ const mongoose = require('mongoose');
 // })
 
 
-db.User.create({
+// db.User.create({
     
-    username: 'pete davidson',
-    password: 'hiii'
-})
+//     username: 'pete davidson',
+//     password: 'hiii'
+// })
 

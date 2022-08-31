@@ -3,8 +3,14 @@ const mongoose = require('mongoose')
 const collabData = new mongoose.Schema(
     {
         tripName:{type:String},
-        tripId:{type:String},
-        userId:{type:String},
+        tripId:{
+            type: mongoose.Types.ObjectId,
+            ref: "Trips"
+        },
+        userId:{
+            type:mongoose.Types.ObjectId,
+            ref: "User"
+        },
         comments:{type:Array},
     })
 
