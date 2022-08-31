@@ -22,7 +22,8 @@ router.post('/trips', async (req, res, next) => {
     const createdTrip = req.body;
     try {
         const newTrip = await db.Trips.create(createdTrip);
-        console.log(newTrip);
+        const newCity = await db.Cities.create({city:newTrip.city,state:newTrip.state,tripId:newTrip._id})
+    
         res.redirect('/trips');
     } catch (err) {
         console.log(err);
