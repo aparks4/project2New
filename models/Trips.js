@@ -18,6 +18,10 @@ const tripData = new mongoose.Schema(
         photos:{type:String},
         active:{type:Boolean},
         userId:{type: Array},
+        comments:{
+            type: mongoose.Types.ObjectId,
+            ref: "Collab",
+        },
 
 })
 
