@@ -14,7 +14,7 @@ const tripData = new mongoose.Schema(
             required:true,
             maxLength: 2
         },
-        activities:{type:Array},
+        activities:[{type:String}],
         photos:{type:String},
         active:{type:Boolean},
         userId:{type: Array},
