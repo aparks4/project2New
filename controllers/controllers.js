@@ -47,7 +47,7 @@ router.get('/trips/:tripIndex', async (req, res, next) => {
         const foundTrip = await db.Trips.findById(req.params.tripIndex);
         const foundComments = await db.Collab.find({tripId: foundTrip._id});
         console.log(foundComments);
-        res.render('show.ejs', { post: foundTrip, id: foundTrip._id, comments: foundComments});
+        res.render('show.ejs', { trip: foundTrip, id: foundTrip._id, comments: foundComments});
     } catch(err) {
         console.log(err);
         next()

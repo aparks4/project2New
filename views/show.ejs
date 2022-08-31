@@ -11,14 +11,14 @@
     <%- include('partials/nav') %>
 
     <div>
-        <h1>Trip Name: <%= post.tripName %></h1>
-        <h3>Trip Dates: <%= post.date %></h3>
-        <h3>City: <%= post.city %></h3>
-        <h3>State: <%= post.state %></h3>
-        <h3>Activities: <%= post.activities %></h3>
-        <img src="<%= post.photos %>" style="max-width: 500px;" />
-        <h3>Active: <%= post.active %></h3>
-        <h3>User: <%= post.userID %></h3>
+        <h1>Trip Name: <%= trip.tripName %></h1>
+        <h3>Trip Dates: <%= trip.date %></h3>
+        <h3>City: <%= trip.city %></h3>
+        <h3>State: <%= trip.state %></h3>
+        <h3>Activities: <%= trip.activities %></h3>
+        <img src="<%= trip.photos %>" style="max-width: 500px;" />
+        <h3>Active: <%= trip.active %></h3>
+        <h3>User: <%= trip.userID %></h3>
     </div>
     <div>
         <form action="/trips/<%= id %>" method="POST">
@@ -26,14 +26,14 @@
                 <input
                     type="text"
                     name="tripName"
-                    value="<%= post.tripName %>"
+                    value="<%= trip.tripName %>"
                 >
             </div>
             <div>
                 <input
                     type="text" 
                     name="tripId"
-                    value="<%= post._id %>"
+                    value="<%= trip._id %>"
                 >
             </div>
             <div>
@@ -52,7 +52,7 @@
         <% } %>
     </div>
     <div>
-       <form action="/trips/<%= post._id %>?_method=DELETE" method="POST">
+       <form action="/trips/<%= trip._id %>?_method=DELETE" method="POST">
         <input
             class="button is-danger"
             type="submit"
@@ -61,7 +61,7 @@
        </form> 
     </div>
     <div>
-        <a href="/trips/<%= post._id %>/edit">Edit This Trip</a>
+        <a href="/trips/<%= trip._id %>/edit">Edit This Trip</a>
     </div>   
 </body>
 </html>
