@@ -33,6 +33,7 @@ router.post('/login', async (req, res, next) => {
                 id: foundUser._id,
                 username: foundUser.username,
             };
+            console.log(req.session.currentUser);
             return res.redirect('/trips');
         }
          } catch(err) {

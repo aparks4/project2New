@@ -18,7 +18,7 @@
         <h3>Activities: <%= trip.activities %></h3>
         <img src="<%= trip.photos %>" style="max-width: 500px;" />
         <h3>Active: <%= trip.active %></h3>
-        <h3>User: <%= trip.userID %></h3>
+        <h3>User: <%= trip.userId %></h3>
     </div>
     <div>
         <form action="/trips/<%= id %>" method="POST">
@@ -36,13 +36,7 @@
                     value="<%= trip._id %>"
                 >
             </div>
-            <div>
-                <input
-                    type="text" 
-                    name="tripId"
-                    value="<%= trip.userId %>"
-                >
-            </div>
+          
             <div>
                 <label for="comments">Comments:</label>
                     <input
@@ -51,11 +45,18 @@
                         placeholder="lalalala"
                     >
             </div>
+            <div>
+                <input
+                    type="text"
+                    name="user"
+                    value="<%= user %>"
+                >
+            </div>
             <button class="button is-info" type="submit">Post Comment</button>
         </form>
         <h4>Comments:</h4>
         <% for(let i = 0; i < comments.length; i++) { %>
-            <h3><%= comments[i].comments %></h3>
+            <h3><%= comments[i].user %>: <%= comments[i].comments %></h3>
         <% } %>
     </div>
     <div>
