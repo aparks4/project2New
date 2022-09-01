@@ -26,6 +26,7 @@ router.use(
 
 //MODEL IMPORT
 const db = require("../models");
+const { Cities } = require("../models");
 // new route
 //GET request for new posts template
 router.get("/new", (req, res) => {
@@ -39,8 +40,6 @@ router.post('/trips', async (req, res, next) => {
     try {
         const newTrip = await db.Trips.create(createdTrip);
         const newCity = await db.Cities.create({city:newTrip.city,state:newTrip.state,tripId:newTrip._id})
-    
-        res.redirect('/trips');
     } catch (err) {
         console.log(err);
         next()
