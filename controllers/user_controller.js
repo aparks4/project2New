@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
+const session = require('express-session');
+const MongoStore = require('connect-mongo');
 const { User } = require('../models');
 const mongoose = require('mongoose');
 require('../connection/db.connection');
@@ -9,6 +11,21 @@ require('../connection/db.connection');
 router.use(express.json());
 
 router.use(express.urlencoded({ extended: false }));
+
+router.use(
+    session({
+        // where to store the sessions in mongodb
+        store: MongoStore.create({ mongoUrl: process.env.MONGODB_URI }),
+        // secret key is used to sign every cookie to say its is valid
+        secret: "super secret",
+        resave: false,
+        saveUninitialized: false,
+        // configure the experation of the cookie
+        cookie: {
+            maxAge: 1000 * 60 * 60 * 24 * 7, // one week
+        },
+    })
+);
 
 router.get('/login', (req, res) => {
     res.render('users/login.ejs');
@@ -33,6 +50,7 @@ router.post('/login', async (req, res, next) => {
                 id: foundUser._id,
                 username: foundUser.username,
             };
+            console.log(req.session)
             console.log(req.session.currentUser);
             return res.redirect('/trips');
         }
@@ -67,11 +85,12 @@ router.post('/register', async (req, res, next) => {
 
 router.get("/logout", async function (req, res) {
     try {
+        console.log(req.session);
         await req.session.destroy();
-        return res.redirect("/users/login");
-        } catch(error) {
+        //res.render('users/logout.ejs');
+        res.redirect('/users/login');
+    } catch(error) {
         console.log(error);
-        return res.send(error);
     }
 });
 
