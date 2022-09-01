@@ -92,7 +92,11 @@ router.get('/trips/:tripIndex/edit', async (req, res, next) => {
     try{
         const foundTrip = await db.Trips.findById(req.params.tripIndex);
         console.log(foundTrip)
-        res.render('edit.ejs', { trip: foundTrip, id: foundTrip._id });
+        if(foundTrip.userId.includes(req.session.currentUser.username)) {
+            res.render('edit.ejs', { trip: foundTrip, id: foundTrip._id }); 
+        } else {
+            res.send('you are not a part of this trip');
+        }
     } catch(err) {
         console.log(err);
         next()
