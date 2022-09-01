@@ -13,6 +13,7 @@ router.use(express.urlencoded({ extended: false }));
 
 //MODEL IMPORT
 const db = require("../models");
+const { Cities } = require("../models");
 // new route
 //GET request for new posts template
 router.get("/new", (req, res) => {
@@ -25,9 +26,15 @@ router.post('/trips', async (req, res, next) => {
     const createdTrip = req.body;
     try {
         const newTrip = await db.Trips.create(createdTrip);
-        const newCity = await db.Cities.create({city:newTrip.city,state:newTrip.state,tripId:newTrip._id})
-    
-        res.redirect('/trips');
+        let findCity = await Cities.findOne({city:newTrip.city, state:newTrip.state})
+        if(!findCity){
+           return await db.Cities.create({city:newTrip.city, state:newTrip.state, tripId:newTrip._id})
+        }else { await db.Cities.updateOne(
+            {city:newTrip.city, state:newTrip.state},
+            {$addToSet:{tripId:newTrip._id}}
+        )}
+        res.redirect('/trips')
+        console.log(findCity)
     } catch (err) {
         console.log(err);
         next()
