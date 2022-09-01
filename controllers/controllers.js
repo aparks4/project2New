@@ -14,6 +14,31 @@ router.use(express.urlencoded({ extended: false }));
 //MODEL IMPORT
 const db = require("../models");
 const { Cities } = require("../models");
+
+// home route
+router.get('/home', (req, res) => {
+    res.render('home.ejs');
+});
+
+// myTrips route
+router.get('/trips/mytrips', async (req, res, next) => {
+    try{
+        const allTrips = await db.Trips.find();
+        let currentUser = req.session.currentUser.username;
+        let userTrips = [];
+        for(let i = 0; i < allTrips.length; i++) {
+            if(allTrips[i].userId.includes(currentUser)) {
+                userTrips.push(allTrips[i])
+            }
+        }
+        console.log(userTrips);
+        res.render('mytrips.ejs', {allTrips: allTrips, currentUser: currentUser, userTrips: userTrips});
+    }catch(err) {
+        console.log(err);
+        next();
+    }
+});
+
 // new route
 //GET request for new posts template
 router.get("/new", (req, res) => {

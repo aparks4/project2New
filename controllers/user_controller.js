@@ -36,7 +36,7 @@ router.post('/login', async (req, res, next) => {
             };
             console.log(req.session)
             console.log(req.session.currentUser);
-            return res.redirect('/trips');
+            return res.redirect('/home');
         }
          } catch(err) {
            console.log(err);
