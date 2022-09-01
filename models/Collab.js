@@ -12,6 +12,7 @@ const collabData = new mongoose.Schema(
             ref: "User"
         },
         comments: [{type: String}],
+        user: {type: String},
     })
 
 const Collab = mongoose.model('Collab', collabData)

@@ -40,7 +40,7 @@ app.use('/users', userControllers);
 // ROUTES
 // home route
 app.get('/', (req, res) => {
-    res.render('home.ejs');
+    res.redirect('/users/login');
 })
 
 // 404 Wildcard Route
