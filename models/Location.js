@@ -16,6 +16,7 @@ const locationData = new mongoose.Schema(
             type:[mongoose.Types.ObjectId],
             ref: "Trips"
         }
+        
     })
 
 const Cities = mongoose.model('Cities', locationData)

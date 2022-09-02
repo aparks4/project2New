@@ -1,3 +1,4 @@
+const { compare } = require("bcryptjs");
 const express = require("express");
 const router = express.Router();
 const mongoose = require('mongoose');
@@ -51,13 +52,14 @@ router.post('/trips', async (req, res, next) => {
     const createdTrip = req.body;
     try {
         const newTrip = await db.Trips.create(createdTrip);
-        let findCity = await Cities.findOne({city:newTrip.city, state:newTrip.state})
+        //const newCity= await db.Cities.create({city:newTrip.city, state:newTrip.state, tripId:newTrip._id})
+        let findCity = await db.Cities.findOne({city:newTrip.city, state:newTrip.state})
         if(!findCity){
-           return await db.Cities.create({city:newTrip.city, state:newTrip.state, tripId:newTrip._id})
+            await db.Cities.create({city:newTrip.city, state:newTrip.state, tripId:newTrip._id, tripName:newTrip.tripName})
         }else { await db.Cities.updateMany(
             {city:newTrip.city, state:newTrip.state},
-            {$addToSet:{tripId:newTrip._id},
-            addToSet:{tripName:newTrip.tripName}},
+            {$addToSet:{tripId:[newTrip._id],tripName:[newTrip.tripName]},
+            },
         )}
         res.redirect('/trips')
         console.log(findCity)
@@ -113,10 +115,15 @@ router.get('/trips', async (req, res, next) => {
 
 router.get('/trips/city', async (req, res, next) => {
     try{
+       
         const allCities = await db.Cities.find()
-        const context= {cities: allCities}
+        const allTrips = await db.Trips.find()
+        
+        const context= {cities: allCities, photos:allTrips}
         console.log(allCities)
+     
         res.render('index-cities.ejs',context)
+        
     } catch(err) {
         console.log(err);
         next()
