@@ -17,11 +17,11 @@ const tripData = new mongoose.Schema(
         activities:[{type:String}],
         photos:{type:String},
         active:{type:Boolean},
-        userId:{type: Array},
-        comments:{
-            type: mongoose.Types.ObjectId,
-            ref: "Collab",
-        },
+        // userId:{
+        //     type:mongoose.Types.ObjectId,
+        //     ref:"User"
+        // },
+        
 
 })
 
