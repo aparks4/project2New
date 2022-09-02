@@ -1,7 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+ 
  body {
-    font-family: 'roman';
-    background-color: rgb(222, 251, 251);
+    font-family: "quicksand";
+    background: url("https://i.imgur.com/2HKH2FK.jpg");
+    background-size: cover;
     }
    
 
+nav {
+   font-size: 30px;
+   font-family: "kanit";
+   font-weight: bold;
+   display: flex;
+   flex-wrap: wrap;
+   padding-bottom: 30px;
+   justify-content: space-between;
+   padding-inline: 30px;
+   text-shadow: black 1px 1px;
+   
+}
 
+a {
+   color: black;
+   padding: 20px;
+   text-decoration: none;
+}
+
+a:hover {
+   color: white;
+}
+
+.DBlogo {
+   max-width: 100px;
+}
+
+h2 {
+   font-size: 50px;
+   text-align: center;
+   font-family: "righteous";
+   color: white;
+}
+
+.allTrips {
+   display: flex;
+   flex-wrap: wrap;
+   flex-direction: row-reverse;
+   justify-content: space-evenly;
+   background-color: rgba(76, 124, 143, 0.9);
+   background-size: cover;
+   border-radius: 20%;
+   padding: 50px;
+}
+
+h1 {
+   font-size: 50px;
+   text-align: center;
+   font-family: "righteous";
+   color: white;
+}
+
+.plantrip {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-evenly;
+   flex-direction: row;
+   font-size: 30px;
+   
+}
+
+.is-info {
+   background-color: rgb(47, 203, 19);
+  border: none;
+  color: rgb(255, 255, 255);
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+#tripName {
+   border: rgb(0, 0, 0);
+   border-style: ridge;
+   padding: 10px;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: right;
+}
+
+#date {
+   border: rgb(0, 0, 0);
+   border-style: ridge;
+   padding: 10px;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: right;
+}
+
+#city {
+   border: rgb(0, 0, 0);
+   border-style: ridge;
+   padding: 10px;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: right;
+}
+
+#state {
+   border: rgb(0, 0, 0);
+   border-style: ridge;
+   padding: 10px;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: right;
+}
+
+#activities {
+   border: rgb(0, 0, 0);
+   border-style: ridge;
+   padding: 10px;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: right;
+}
+
+#photos {
+   border: rgb(0, 0, 0);
+   border-style: ridge;
+   padding: 10px;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: right;
+}
+
+#active {
+   border: rgb(0, 0, 0);
+   border-style: ridge;
+   padding: 10px;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: right;
+}
+
+#userId {
+   border: rgb(0, 0, 0);
+   border-style: ridge;
+   padding: 10px;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: right;
+}
