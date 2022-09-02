@@ -3,10 +3,9 @@ const express = require('express');
 const methodOverride = require('method-override');
 const session = require('express-session');
 const MongoStore = require('connect-mongo');
-const mongoose = require('mongoose');
 require('dotenv').config();
 
-mongoose.connect( process.env.MONGODB_URI || "code101@abnb.o7jlggi.mongodb.net/?retryWrites=true&w=majority" );
+
 
 // CONTROLLERS IMPORTS
 const controllers = require('./controllers/controllers');
