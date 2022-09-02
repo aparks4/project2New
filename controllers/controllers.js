@@ -46,7 +46,6 @@ router.post('/trips', async (req, res, next) => {
             {city:newTrip.city, state:newTrip.state},
             {$addToSet:{tripId:newTrip._id},
             addToSet:{tripName:newTrip.tripName}},
-            
         )}
         res.redirect('/trips')
         console.log(findCity)
@@ -60,6 +59,7 @@ router.post('/trips/:tripIndex', async (req, res, next) => {
     try{
         const newComment = await db.Collab.create(req.body);
         //const foundUser = req.session.currentUser.username;
+
         console.log(newComment)
         res.redirect(`/trips/${req.params.tripIndex}`)
     } catch(err) {
@@ -73,8 +73,10 @@ router.get('/trips/:tripIndex', async (req, res, next) => {
     try{
         const foundTrip = await db.Trips.findById(req.params.tripIndex);
         const foundComments = await db.Collab.find({tripId: foundTrip._id});
+
         const foundUser = req.session.currentUser;
         const otherFoundUser = await db.User.findOne({username: foundUser.username});
+
         //console.log(foundComments);
         res.render('show.ejs', { trip: foundTrip, id: foundTrip._id, comments: foundComments, user: otherFoundUser.username,});
     } catch(err) {
