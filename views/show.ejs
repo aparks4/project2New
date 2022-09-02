@@ -20,7 +20,10 @@
         <h3>Activities: <%= trip.activities %></h3>
         <img src="<%= trip.photos %>" style="max-width: 500px;" />
         <h3>Active: <%= trip.active %></h3>
-        <h3>User: <%= trip.userId %></h3>
+        <h3>Users:</h3>
+        <% for(let i = 0; i < trip.userId.length; i++) { %>
+            <h4><%= trip.userId[i] %></h4>
+        <% } %>
     </div>
     <div>
         <form action="/trips/<%= id %>" method="POST">

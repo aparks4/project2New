@@ -10,6 +10,7 @@ router.use(express.json());
 
 router.use(express.urlencoded({ extended: false }));
 
+
 router.get('/login', (req, res) => {
     res.render('users/login.ejs');
 })
@@ -33,6 +34,7 @@ router.post('/login', async (req, res, next) => {
                 id: foundUser._id,
                 username: foundUser.username,
             };
+            console.log(req.session)
             console.log(req.session.currentUser);
             return res.redirect('/trips');
         }
@@ -67,11 +69,12 @@ router.post('/register', async (req, res, next) => {
 
 router.get("/logout", async function (req, res) {
     try {
+        console.log(req.session);
         await req.session.destroy();
-        return res.redirect("/users/login");
-        } catch(error) {
+        //res.render('users/logout.ejs');
+        res.redirect('/users/login');
+    } catch(error) {
         console.log(error);
-        return res.send(error);
     }
 });
 

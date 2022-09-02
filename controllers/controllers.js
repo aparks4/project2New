@@ -1,8 +1,6 @@
 const express = require("express");
 const router = express.Router();
 const mongoose = require('mongoose');
-const session = require('express-session');
-const MongoStore = require('connect-mongo');
 require('dotenv').config();
 require('../connection/db.connection');
 
@@ -12,17 +10,6 @@ router.use(express.json());
 
 router.use(express.urlencoded({ extended: false }));
 
-router.use(
-    session({
-        store: MongoStore.create({ mongoUrl: process.env.MONGODB_URI}),
-        secret: 'super secret',
-        resave: false,
-        saveUninitialized: false,
-        cookie: {
-            maxAge: 1000 * 60 * 60 * 24 * 7,
-        },
-    })
-);
 
 //MODEL IMPORT
 const db = require("../models");
@@ -105,7 +92,11 @@ router.get('/trips/:tripIndex/edit', async (req, res, next) => {
     try{
         const foundTrip = await db.Trips.findById(req.params.tripIndex);
         console.log(foundTrip)
-        res.render('edit.ejs', { trip: foundTrip, id: foundTrip._id });
+        if(foundTrip.userId.includes(req.session.currentUser.username)) {
+            res.render('edit.ejs', { trip: foundTrip, id: foundTrip._id }); 
+        } else {
+            res.send('you are not a part of this trip');
+        }
     } catch(err) {
         console.log(err);
         next()
