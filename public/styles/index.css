@@ -1,0 +1,32 @@
+.view-by{
+    text-align: center;
+    padding-top:10px;
+    font-size: 20px;
+
+
+}
+
+.trips-container{
+    text-align: center;
+    background-color: rgba(174, 163, 140, 0.8);
+    border-radius: 20px;
+  
+}
+
+.city-name{
+    color:white;
+    font-size: 30px;
+    text-decoration: underline 2px dotted rgba(222, 184, 135,.5);
+    justify-content: center;
+    margin: 5px 35% 0px 35%;
+    text-shadow: 1px 1px rgb(222, 184, 135);
+
+}
+
+.trip-name{
+    font-size:20px;
+    padding:0px;
+    color: white;
+    
+}
+

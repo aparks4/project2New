@@ -6,6 +6,7 @@
     font-family: "quicksand";
     background: url("https://i.imgur.com/2HKH2FK.jpg");
     background-size: cover;
+    
     }
    
 
@@ -41,6 +42,7 @@ h2 {
    text-align: center;
    font-family: "righteous";
    color: white;
+   margin: 0 auto;
 }
 
 .allTrips {
@@ -152,3 +154,20 @@ h1 {
    flex-wrap: wrap;
    justify-content: right;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
