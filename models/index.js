@@ -1,3 +1,5 @@
+const mongoose = require('mongoose');
+
 module.exports = {
     Cities : require("./Location.js"),
     Trips: require("./Trips.js"),
