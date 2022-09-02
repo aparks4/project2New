@@ -52,6 +52,7 @@ app.route('/*').all((req,res)=>{
 
 
 // SERVER
-app.listen(PORT, () => {
-    console.log('Listening on port 4000...')
-});
+// app.listen(PORT, () => {
+//     console.log('Listening on port 4000...')
+// });
+app.listen(process.env.PORT || 4000);
