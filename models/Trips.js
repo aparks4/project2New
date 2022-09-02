@@ -22,6 +22,7 @@ const tripData = new mongoose.Schema(
             type: mongoose.Types.ObjectId,
             ref: "Collab",
         },
+        
 
 })
 

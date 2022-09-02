@@ -64,91 +64,89 @@ h1 {
 .plantrip {
    display: flex;
    flex-wrap: wrap;
-   justify-content: space-evenly;
-   flex-direction: row;
+   justify-content: p;
+   flex-direction: column;
    font-size: 30px;
-   
+   background-color: rgba(76, 124, 143, 0.9);
+}
+
+.tripForm {
+   display: flex;
+   flex-wrap: wrap;
+   flex-direction: column;
+   justify-content: space-evenly;
+   align-items: center;
 }
 
 .is-info {
    background-color: rgb(47, 203, 19);
-  border: none;
+  border: dotted darkgreen;
   color: rgb(255, 255, 255);
   padding: 10px;
-  text-align: center;
   text-decoration: none;
-  display: inline-block;
   font-size: 16px;
+  margin-inline-start: 30px;
+}
+
+.is-info:hover {
+   background-color: greenyellow;
 }
 
 #tripName {
    border: rgb(0, 0, 0);
    border-style: ridge;
    padding: 10px;
-   display: flex;
-   flex-wrap: wrap;
-   justify-content: right;
 }
 
 #date {
    border: rgb(0, 0, 0);
    border-style: ridge;
    padding: 10px;
-   display: flex;
-   flex-wrap: wrap;
-   justify-content: right;
 }
 
 #city {
    border: rgb(0, 0, 0);
    border-style: ridge;
    padding: 10px;
-   display: flex;
-   flex-wrap: wrap;
-   justify-content: right;
 }
 
 #state {
    border: rgb(0, 0, 0);
    border-style: ridge;
    padding: 10px;
-   display: flex;
-   flex-wrap: wrap;
-   justify-content: right;
 }
 
 #activities {
    border: rgb(0, 0, 0);
    border-style: ridge;
    padding: 10px;
-   display: flex;
-   flex-wrap: wrap;
-   justify-content: right;
 }
 
 #photos {
    border: rgb(0, 0, 0);
    border-style: ridge;
    padding: 10px;
-   display: flex;
-   flex-wrap: wrap;
-   justify-content: right;
 }
 
 #active {
    border: rgb(0, 0, 0);
    border-style: ridge;
    padding: 10px;
+   
+}
+
+.userContainer {
    display: flex;
-   flex-wrap: wrap;
-   justify-content: right;
+   flex-direction: row;
+}
+
+.userInputs {
+   display: flex;
+   flex-direction: column;
 }
 
 #userId {
    border: rgb(0, 0, 0);
    border-style: ridge;
    padding: 10px;
-   display: flex;
-   flex-wrap: wrap;
-   justify-content: right;
 }

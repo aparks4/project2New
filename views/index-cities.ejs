@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trip Index</title>
+</head>
+<body>
+    <%- include('partials/nav') %>
+
+    <div>
+        <h2>EXPLORE</h2>
+    </div>
+    <div>
+        <% for(let i = 0; i < cities.length; i++) { %>
+            <% const firstCity = cities[i] %>
+            <p><%=firstCity.city%></p>
+           <% for(let j = 0; j < cities[i].tripName.length; j++){%>
+            <%const firstTrip = cities[i].tripName[j]%>
+
+            <a href="/trips/<%= cities[i].tripId[j] %>"><%=firstTrip%></a>
+            
+          <% } %>
+          
+        <% } %>
+    </div>
+</body>
+</html>

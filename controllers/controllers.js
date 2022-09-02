@@ -1,3 +1,4 @@
+const { compare } = require("bcryptjs");
 const express = require("express");
 const router = express.Router();
 const mongoose = require('mongoose');
@@ -13,6 +14,32 @@ router.use(express.urlencoded({ extended: false }));
 
 //MODEL IMPORT
 const db = require("../models");
+const { Cities } = require("../models");
+
+// home route
+router.get('/home', (req, res) => {
+    res.render('home.ejs');
+});
+
+// myTrips route
+router.get('/trips/mytrips', async (req, res, next) => {
+    try{
+        const allTrips = await db.Trips.find();
+        let currentUser = req.session.currentUser.username;
+        let userTrips = [];
+        for(let i = 0; i < allTrips.length; i++) {
+            if(allTrips[i].userId.includes(currentUser)) {
+                userTrips.push(allTrips[i])
+            }
+        }
+        console.log(userTrips);
+        res.render('mytrips.ejs', {allTrips: allTrips, currentUser: currentUser, userTrips: userTrips});
+    }catch(err) {
+        console.log(err);
+        next();
+    }
+});
+
 // new route
 //GET request for new posts template
 router.get("/new", (req, res) => {
@@ -25,9 +52,17 @@ router.post('/trips', async (req, res, next) => {
     const createdTrip = req.body;
     try {
         const newTrip = await db.Trips.create(createdTrip);
-        const newCity = await db.Cities.create({city:newTrip.city,state:newTrip.state,tripId:newTrip._id})
-    
-        res.redirect('/trips');
+        //const newCity= await db.Cities.create({city:newTrip.city, state:newTrip.state, tripId:newTrip._id})
+        let findCity = await db.Cities.findOne({city:newTrip.city, state:newTrip.state})
+        if(!findCity){
+            await db.Cities.create({city:newTrip.city, state:newTrip.state, tripId:newTrip._id, tripName:newTrip.tripName})
+        }else { await db.Cities.updateMany(
+            {city:newTrip.city, state:newTrip.state},
+            {$addToSet:{tripId:[newTrip._id],tripName:[newTrip.tripName]},
+            },
+        )}
+        res.redirect('/trips')
+        console.log(findCity)
     } catch (err) {
         console.log(err);
         next()
@@ -38,6 +73,7 @@ router.post('/trips/:tripIndex', async (req, res, next) => {
     try{
         const newComment = await db.Collab.create(req.body);
         //const foundUser = req.session.currentUser.username;
+
         console.log(newComment)
         res.redirect(`/trips/${req.params.tripIndex}`)
     } catch(err) {
@@ -51,9 +87,11 @@ router.get('/trips/:tripIndex', async (req, res, next) => {
     try{
         const foundTrip = await db.Trips.findById(req.params.tripIndex);
         const foundComments = await db.Collab.find({tripId: foundTrip._id});
+
         const foundUser = req.session.currentUser;
         const otherFoundUser = await db.User.findOne({username: foundUser.username});
-        console.log(foundComments);
+
+        //console.log(foundComments);
         res.render('show.ejs', { trip: foundTrip, id: foundTrip._id, comments: foundComments, user: otherFoundUser.username,});
     } catch(err) {
         console.log(err);
@@ -74,6 +112,24 @@ router.get('/trips', async (req, res, next) => {
         next()
     }
 })
+
+router.get('/trips/city', async (req, res, next) => {
+    try{
+       
+        const allCities = await db.Cities.find()
+        const allTrips = await db.Trips.find()
+        
+        const context= {cities: allCities, photos:allTrips}
+        console.log(allCities)
+     
+        res.render('index-cities.ejs',context)
+        
+    } catch(err) {
+        console.log(err);
+        next()
+    }
+})
+
 
 // destroy route
 router.delete('/trips/:tripIndex', async (req, res, next) => {

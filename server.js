@@ -5,9 +5,12 @@ const session = require('express-session');
 const MongoStore = require('connect-mongo');
 require('dotenv').config();
 
+
+
 // CONTROLLERS IMPORTS
 const controllers = require('./controllers/controllers');
 const userControllers = require('./controllers/user_controller');
+
 
 // app configuration
 const app = express();
@@ -52,6 +55,7 @@ app.route('/*').all((req,res)=>{
 
 
 // SERVER
-app.listen(PORT, () => {
-    console.log('Listening on port 4000...')
-});
+// app.listen(PORT, () => {
+//     console.log('Listening on port 4000...')
+// });
+app.listen(process.env.PORT || 4000);

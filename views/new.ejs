@@ -14,7 +14,7 @@
     <h1>Plan a New Trip:</h1>
     <container class="plantrip">
     <div>
-        <form action="/trips" method="POST">
+        <form action="/trips" method="POST" class="tripForm">
             <div>
                 <label for="tripName">Trip Name</label>
                 <input
@@ -78,14 +78,16 @@
                     id="active"
                 >
             </div>
-            <div>
+            <div class="userContainer">
                 <label for="userId">Users</label>
+                <div class="userInputs">
                     <input type="text" name="userId" id="userId">
                     <input type="text" name="userId" id="userId">
                     <input type="text" name="userId" id="userId">
                     <input type="text" name="userId" id="userId">
                     <input type="text" name="userId" id="userId">
                     <input type="text" name="userId" id="userId">
+                </div>
             </div>
         </container>
             <div>

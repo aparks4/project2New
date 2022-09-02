@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/mytrips.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap" rel="stylesheet">
+    <title>Trips</title>
+</head>
+<body>
+    <%- include('partials/nav') %>
+    <h1>My Trips:</h1>
+        <div class="trip-list">
+        <% for (let i = 0; i < userTrips.length; i++) { %>
+            <a href="/trips/<%= userTrips[i]._id %>"><%= userTrips[i].tripName %></a>
+        <% } %> 
+        </div>
+        <div class="last-section">
+            <a class="new-trip" href="/new">Plan a new trip</a>
+        </div>
+</body>
+</html>
