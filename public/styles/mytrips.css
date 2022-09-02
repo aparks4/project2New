@@ -1,0 +1,62 @@
+body {
+    background-image: url("https://i.imgur.com/uzo6Va7.jpg");
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Caveat', cursive;
+    font-weight: bolder;
+}
+nav {
+    font-size: 25px;
+    font-weight: thick;
+    padding: 10px;
+    border-radius: 15%;
+    width: 400px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.logout-link {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 20px;
+    background-color:rgb(211, 211, 253);
+    padding: 10px;
+    border-radius: 15%;
+    width: auto;
+}
+.logout-link:hover {
+    border-style: solid;
+}
+h1 {
+    font-size: 55px;
+}
+.trip-list {
+    background-color: rgb(239, 241, 222);
+    height: 40%;
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    border-radius: 15%;
+    font-size: 25px;
+}
+a {
+    color: black;
+    text-decoration: none;
+}
+
+.new-trip {
+    font-size: 25px;
+    display: flex;
+    align-self: flex-end;
+    margin-top: 100px;
+    background-color: rgb(211, 211, 253);
+    padding: 10px;
+    border-radius: 15%;
+}
+.new-trip:hover {
+    border-style: solid;
+}

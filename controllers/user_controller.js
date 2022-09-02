@@ -71,7 +71,6 @@ router.get("/logout", async function (req, res) {
     try {
         console.log(req.session);
         await req.session.destroy();
-        //res.render('users/logout.ejs');
         res.redirect('/users/login');
     } catch(error) {
         console.log(error);
