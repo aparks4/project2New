@@ -1,14 +1,18 @@
 .DBlogo {
     max-width: 100px;
     position: absolute;
-    top: 10px;
-    left: 10px;
+    left: 5px;
+    top: 5px;
 }
 .main-nav {
     display: flex;
     justify-content: center;
     align-self: center;
     font-size: 25px;
+    margin-top: 3px;
+}
+.logout-link {
+    margin-top: 3px;
 }
 .logout-link:hover {
     padding: 5px;
@@ -45,7 +49,10 @@ body {
     align-items: center;
     justify-content: space-around;
     font-size: 25px;
-    margin-left: 60px;
+    border-radius: 5%;
+    background-color: rgb(13, 105, 105, .85);
+    margin-right: 15px;
+    
 }
 .trip-image {
     border-radius: 10%;
@@ -56,6 +63,7 @@ h3, p {
 }
 .edit-link {
     font-size: 30px;
+    margin-bottom: 15px;
 }
 .edit-link:hover {
     padding: 5px;
@@ -65,11 +73,10 @@ h3, p {
     flex-direction: column;
     align-items: flex-start;
     padding-left: 30px;
-    border-style: solid;
     border-radius: 5%;
     justify-content: flex-start;
     width: 40%;
-    background-color: rgb(253, 244, 220);
+    background-color: rgb(253, 244, 220, .85);
 }
 h4 {
     display: flex;
