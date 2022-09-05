@@ -1,33 +1,29 @@
 
 body{
-    background-image: url("https://i.imgur.com/uzo6Va7.jpg");
-    background-size: cover;
+   
     font-family: 'Caveat Brush', cursive;
-    background-size: cover;
-    
-}
-img{
-    max-height: 100px;
-    display: inline;
+   
 }
 
-li{
-    
-    column-count: 2;
+img{
+    max-height: 100px;
+    max-width: 50px;
+    margin:0px;
 }
+
+
 
 nav {
     font-size: 40px;
     text-align: center;
-    background-color:rgba(232,182,148,.6);
-    border-radius: 20px;
+   
     
   
 }
 .logout-link{
     font-size:30px;
     color: white;
-    background-color:rgb(95, 95, 95,.6);
+   
 }
 
 
@@ -41,45 +37,63 @@ a:hover{
    color: rgb(140, 160, 139);
 }
 
+.container{
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    column-gap: 10px;
+    place-items: center;
+}
 
 
 .view-by{
     text-align: center;
-    padding:10px;
-    font-size: 20px;
+    padding:15px;
+    font-size: 30px;
     color:antiquewhite;
     margin: 5px;
 }
 
 .trips-container{
+    grid-column: 2;
     text-align: center;
-    background-color: rgba(174, 163, 140, 0.8);
+    background-color: rgba(239, 238, 235, 0.793);
     border-radius: 20px;
-  
+    padding:90px;
+    padding-top:10px;
 }
 
 .city-name{
-    color:white;
-    font-size: 40px;
-    
-    justify-content: center;
-    padding-bottom: 5px;
-    margin: 5px 35% 0px 35%;
-    text-shadow: 1px 2px rgb(222, 184, 135);
-
+    color:rgb(21, 20, 20);
+    font-size: 30px;
+    padding-bottom: 10px;
+    margin: 5px ;
+    text-shadow: 1px 2px rgb(234, 230, 225);
+    text-decoration: dotted underline;
 }
 
 .trip-name{
-    font-size:30px;
-    padding:5px;
-    color: white;
-   /* background-color: rgba(174, 163, 140, 0.8); */
-    border-radius: 20px;
-    text-align: center;
-    
+    font-size:25px;
+    padding:10px;
+    color: rgb(60, 58, 58);
+} 
+
+.photos-1{
+    grid-column: 1;
+    background-color: rgba(239, 238, 235, 0.793);
+    border-radius: 10px;
     
 }
 
 
+img{
+    display: block;
+    max-width: 300px;
+    max-height: 200px;
+    padding: 10px;
 
-
+}
+.photos-2{
+    grid-column: 3;
+    background-color: rgba(239, 238, 235, 0.793);
+    border-radius: 10px;
+}
