@@ -1,41 +1,4 @@
 
-body{
-   
-    font-family: 'Caveat Brush', cursive;
-   
-}
-
-img{
-    max-height: 100px;
-    max-width: 50px;
-    margin:0px;
-}
-
-
-
-nav {
-    font-size: 40px;
-    text-align: center;
-   
-    
-  
-}
-.logout-link{
-    font-size:30px;
-    color: white;
-   
-}
-
-
-a{
-    text-decoration: none;
-    color:antiquewhite;
-    padding:15px;
-}
-
-a:hover{
-   color: rgb(140, 160, 139);
-}
 
 .container{
     display: grid;
@@ -76,6 +39,12 @@ a:hover{
     padding:10px;
     color: rgb(60, 58, 58);
 } 
+.trip-name2{
+font-size: 40px;
+    padding:10px;
+    color: rgb(60, 58, 58);
+
+}
 
 .photos-1{
     grid-column: 1;
@@ -84,7 +53,6 @@ a:hover{
     
 }
 
-
 img{
     display: block;
     max-width: 300px;
@@ -92,6 +60,7 @@ img{
     padding: 10px;
 
 }
+
 .photos-2{
     grid-column: 3;
     background-color: rgba(239, 238, 235, 0.793);

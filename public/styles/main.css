@@ -14,10 +14,9 @@ nav {
    font-size: 30px;
    font-family: "kanit";
    font-weight: bold;
-   display: flex;
-   flex-wrap: wrap;
+   text-align: center;
    padding-bottom: 30px;
-   justify-content: space-between;
+   
    padding-inline: 30px;
    text-shadow: black 1px 1px;
    
