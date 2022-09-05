@@ -30,6 +30,9 @@ nav {
 .logout-link:hover {
     border-style: solid;
 }
+a:hover {
+    font-size: 27px;  
+}
 h1 {
     font-size: 55px;
 }
