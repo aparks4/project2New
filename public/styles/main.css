@@ -10,7 +10,7 @@
    
 
 nav {
-   font-size: 30px;
+   font-size: 25px;
    font-family: "kanit";
    font-weight: bold;
    display: flex;
@@ -20,6 +20,10 @@ nav {
    padding-inline: 30px;
    text-shadow: black 1px 1px;
    
+}
+.logout-link {
+   margin-bottom: 10px;
+   font-size: 20px;
 }
 
 a {
@@ -35,7 +39,11 @@ a:hover {
 .DBlogo {
    max-width: 100px;
 }
-
+.home-options {
+   background-color: rgba(76, 124, 143, 0.9);
+   border-radius: 20%;
+   padding: 50px;
+}
 h2 {
    font-size: 50px;
    text-align: center;

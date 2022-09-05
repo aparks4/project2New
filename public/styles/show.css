@@ -63,10 +63,7 @@ h3, p {
 }
 .edit-link {
     font-size: 30px;
-    margin-bottom: 15px;
-}
-.edit-link:hover {
-    padding: 5px;
+    margin-bottom: 25px;
 }
 .chat-section {
     display: flex;
