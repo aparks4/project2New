@@ -11,7 +11,7 @@
    
 
 nav {
-   font-size: 30px;
+   font-size: 25px;
    font-family: "kanit";
    font-weight: bold;
    text-align: center;
@@ -20,6 +20,10 @@ nav {
    padding-inline: 30px;
    text-shadow: black 1px 1px;
    
+}
+.logout-link {
+   margin-bottom: 10px;
+   font-size: 20px;
 }
 
 a {
@@ -35,7 +39,11 @@ a:hover {
 .DBlogo {
    max-width: 100px;
 }
-
+.home-options {
+   background-color: rgba(76, 124, 143, 0.9);
+   border-radius: 20%;
+   padding: 50px;
+}
 h2 {
    font-size: 50px;
    text-align: center;
@@ -62,111 +70,113 @@ h1 {
    color: white;
 }
 
+
 .plantrip {
    display: flex;
-   flex-wrap: wrap;
+   flex-direction: column;
    justify-content: space-evenly;
-   flex-direction: row;
+   align-items: center;
+   align-content: center;
    font-size: 30px;
-   
+   background-color: rgba(76, 124, 143, 0.9);
+}
+
+.tripForm {
+   display: flex;
+   flex-wrap: wrap;
+   flex-direction: column;
 }
 
 .is-info {
    background-color: rgb(47, 203, 19);
-  border: none;
+  border: dotted darkgreen;
   color: rgb(255, 255, 255);
   padding: 10px;
-  text-align: center;
   text-decoration: none;
-  display: inline-block;
   font-size: 16px;
+  margin-inline-start: 70px;
+  margin-bottom: 20px;
+}
+
+.is-info:hover {
+   background-color: greenyellow;
 }
 
 #tripName {
    border: rgb(0, 0, 0);
    border-style: ridge;
    padding: 10px;
-   display: flex;
-   flex-wrap: wrap;
-   justify-content: right;
+   width: 300px;
 }
 
 #date {
    border: rgb(0, 0, 0);
    border-style: ridge;
    padding: 10px;
-   display: flex;
-   flex-wrap: wrap;
-   justify-content: right;
+   width: 300px;
 }
 
 #city {
    border: rgb(0, 0, 0);
    border-style: ridge;
    padding: 10px;
-   display: flex;
-   flex-wrap: wrap;
-   justify-content: right;
+   width: 300px;
 }
 
 #state {
    border: rgb(0, 0, 0);
    border-style: ridge;
    padding: 10px;
-   display: flex;
-   flex-wrap: wrap;
-   justify-content: right;
+   width: 300px;
 }
+
 
 #activities {
    border: rgb(0, 0, 0);
    border-style: ridge;
    padding: 10px;
-   display: flex;
-   flex-wrap: wrap;
-   justify-content: right;
+   width: 300px;
 }
 
 #photos {
    border: rgb(0, 0, 0);
    border-style: ridge;
    padding: 10px;
-   display: flex;
-   flex-wrap: wrap;
-   justify-content: right;
+   width: 300px;
 }
 
 #active {
    border: rgb(0, 0, 0);
    border-style: ridge;
    padding: 10px;
+   width: 300px;
+}
+
+.userContainer {
    display: flex;
-   flex-wrap: wrap;
-   justify-content: right;
+   flex-direction: column;
+   padding: 10px;
+}
+
+.userInputs {
+   display: flex;
+   flex-direction: column;
+   padding: 10px;
+   width: 300px;
 }
 
 #userId {
    border: rgb(0, 0, 0);
    border-style: ridge;
    padding: 10px;
-   display: flex;
-   flex-wrap: wrap;
-   justify-content: right;
+   margin: 2px;
+   width: 300px;
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+input {
+   display: flex;
+   align-self: flex-end;
+}
 
 
