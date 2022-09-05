@@ -2,14 +2,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
  
- body {
+body {
     font-family: "quicksand";
     background: url("https://i.imgur.com/2HKH2FK.jpg");
+    background-repeat: no-repeat;
     background-size: cover;
     
     }
    
-
 nav {
    font-size: 25px;
    font-family: "kanit";
@@ -49,7 +49,6 @@ h2 {
    text-align: center;
    font-family: "righteous";
    color: white;
-   margin: 0 auto;
 }
 
 .allTrips {
