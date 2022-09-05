@@ -4,13 +4,27 @@ DB Trippin is a full-stack web application where you will be planning your next 
 
 ## Visuals
 ![alt text](https://i.imgur.com/sYTWhMt.png)
+![alt text]()
+
 
 ## Technologies Implemented 
 Express, Node.js, Mongoose, and MongoDB.
 
 ## Getting Started
-//link
+Click this link to deploy the application-->https://arynsgaproject.herokuapp.com/users/login
 ### Directions
 
+
 ## Next Steps
-We would like to implement 
+We would like to implement more review and trip planning features in the future. 
+
+## Developers
+Nathalie Coursey
+Samantha Nay
+Aryn Parks
+
+## Support
+Any concerns or questions? Contact:
+arynmparks@gmail.com
+nathaliecoursey@gmail.com
+
