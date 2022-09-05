@@ -16,7 +16,7 @@ Click this link to deploy the application-->https://arynsgaproject.herokuapp.com
 
 
 ## Next Steps
-We would like to implement more review and trip planning features in the future. 
+We would like to implement more review and trip planning features in the future. We would love to expand to more countries outside the USA
 
 ## Developers
 Nathalie Coursey
