@@ -1,0 +1,53 @@
+.DBlogo {
+    max-width: 100px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+.main-nav {
+    position: absolute;
+    top: 10px;
+}
+body {
+    background-image: url('https://i.imgur.com/lFx3qYC.jpg');
+    background-size: cover;
+    font-family: 'Caveat', cursive;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    border-style: solid;
+}
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-style: solid;
+    width: 100%;
+}
+.trip-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.trip-image {
+    border-radius: 10%;
+    border-style: solid;
+}
+h3, p {
+    padding: 0px;
+    margin: 5px;
+}
+.chat-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-style: solid;
+    justify-content: flex-start;
+    width: 40%;
+    background-color: rgb(253, 244, 220);
+}
+
+

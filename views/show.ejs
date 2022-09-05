@@ -4,80 +4,74 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/styles/show.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap" rel="stylesheet">
     <!-- <script src="../public/scripts/main.js"></script> -->
     <title>Show Page</title>
 </head>
 <img class="DBlogo" src="https://i.imgur.com/cBxeHWy.png" alt="DB logo">
 <body>
     <%- include('partials/nav') %>
-
-    <div>
-        <h1>Trip Name: <%= trip.tripName %></h1>
-        <h3>Trip Dates: <%= trip.date %></h3>
-        <h3>City: <%= trip.city %></h3>
-        <h3>State: <%= trip.state %></h3>
-        <h3>Activities: <%= trip.activities %></h3>
-        <img src="<%= trip.photos %>" style="max-width: 500px;" />
-        <h3>Active: <%= trip.active %></h3>
-        <h3>Users:</h3>
-        <% for(let i = 0; i < trip.userId.length; i++) { %>
-            <h4><%= trip.userId[i] %></h4>
-        <% } %>
-    </div>
-    <div>
-        <form action="/trips/<%= id %>" method="POST">
+    <div class="container">
+        <div class="trip-info">
+            <a href="/trips/<%= trip._id %>/edit">Edit This Trip</a>
+            <h1><%= trip.tripName %></h1>
+            <img src="<%= trip.photos %>" style="max-width: 400px;" class="trip-image"/>
+            <h3>Dates: <%= trip.date %></h3>
+            <h3>City: <%= trip.city %></h3>
+            <h3>State: <%= trip.state %></h3>
+            <h3>Activities: <%= trip.activities %></h3>
+            <h3>Active: <%= trip.active %></h3>
+            <h3>Who's going?</h3>
+            <% for(let i = 0; i < trip.userId.length; i++) { %>
+                <p><%= trip.userId[i] %></p>
+            <% } %>
+        </div>
+        <div class="chat-section">
             <div>
-                <input
-                    type="text"
-                    name="tripName"
-                    value="<%= trip.tripName %>"
-                    style="display: none"
-                >
+                <h4>Trip Chat</h4>
+                <% for(let i = 0; i < comments.length; i++) { %>
+                    <h3><%= comments[i].user %>: <%= comments[i].comments %></h3>
+                <% } %>
             </div>
-            <div>
-                <input
-                    type="text" 
-                    name="tripId"
-                    value="<%= trip._id %>"
-                    style="display: none"
-                >
-            </div>
-          
-            <div>
-                <label for="comments">Comments:</label>
+            <form action="/trips/<%= id %>" method="POST">
+                <div>
                     <input
                         type="text"
-                        name="comments"
-                        placeholder="lalalala"
+                        name="tripName"
+                        value="<%= trip.tripName %>"
+                        style="display: none"
                     >
-            </div>
-            <div>
-                <input
-                    type="text"
-                    name="user"
-                    value="<%= user %>"
-                    style="display: none"
-                >
-            </div>
-            <button class="button is-info" type="submit">Post Comment</button>
-        </form>
-        <h4>Comments:</h4>
-        <% for(let i = 0; i < comments.length; i++) { %>
-            <h3><%= comments[i].user %>: <%= comments[i].comments %></h3>
-        <% } %>
+                </div>
+                <div>
+                    <input
+                        type="text" 
+                        name="tripId"
+                        value="<%= trip._id %>"
+                        style="display: none"
+                    >
+                </div>
+                <div>
+                    <label for="comments"></label>
+                        <input
+                            type="text"
+                            name="comments"
+                            placeholder="lalalala"
+                        >
+                </div>
+                <div>
+                    <input
+                        type="text"
+                        name="user"
+                        value="<%= user %>"
+                        style="display: none"
+                    >
+                </div>
+                <button class="button is-info" type="submit">Post Comment</button>
+            </form>
+        </div>
     </div>
-    <div>
-       <form action="/trips/<%= trip._id %>?_method=DELETE" method="POST">
-        <input
-            class="button is-danger"
-            type="submit"
-            value="Delete This Trip"
-        >
-       </form> 
-    </div>
-    <div>
-        <a href="/trips/<%= trip._id %>/edit">Edit This Trip</a>
-    </div>   
 </body>
 </html>
