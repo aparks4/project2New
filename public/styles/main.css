@@ -6,6 +6,8 @@
     font-family: "quicksand";
     background: url("https://i.imgur.com/2HKH2FK.jpg");
     background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     
     }
    
@@ -16,7 +18,6 @@ nav {
    font-weight: bold;
    text-align: center;
    padding-bottom: 30px;
-   
    padding-inline: 30px;
    text-shadow: black 1px 1px;
    
@@ -50,6 +51,7 @@ h2 {
    font-family: "righteous";
    color: white;
    margin: 0 auto;
+   padding: 20px;
 }
 
 .allTrips {
