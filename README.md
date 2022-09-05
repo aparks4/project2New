@@ -18,13 +18,13 @@ Click this link to deploy the application-->https://arynsgaproject.herokuapp.com
 We would like to implement more review and trip planning features in the future. We would love to expand to more countries outside the USA.
 
 ## Developers
-Nathalie Coursey
-Samantha Nay
-Aryn Parks
+Nathalie Coursey |
+Samantha Nay |
+Aryn Parks |
 
 ## Support
 Any concerns or questions? Contact:
-arynmparks@gmail.com
-nathaliecoursey@gmail.com
-samanthajnay@gmail.com
+arynmparks@gmail.com |
+nathaliecoursey@gmail.com |
+samanthajnay@gmail.com |
 
