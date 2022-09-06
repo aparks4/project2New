@@ -4,7 +4,7 @@ const tripData = new mongoose.Schema(
     {
         tripName:{
             type:String},
-        date:{type:Date},
+        date:[Date],
         city: {
             type:String,
             required:true

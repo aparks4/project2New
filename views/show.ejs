@@ -20,7 +20,7 @@
         <div class="trip-info">
             <h2><%= trip.tripName %></h2>
             <img src="<%= trip.photos %>" style="max-width: 400px;" class="trip-image"/>
-            <h3>Dates: <%= trip.date %></h3>
+            <h3>Dates: <%= trip.date[0]  %> | <%= trip.date[1] %></h3>
             <h3>City: <%= trip.city %></h3>
             <h3>State: <%= trip.state %></h3>
             <h3>Activities: <%= trip.activities %></h3>
