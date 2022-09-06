@@ -16,7 +16,7 @@ const tripData = new mongoose.Schema(
         },
         activities:[{type:String}],
         photos:{type:String},
-        userId:{type: Array},
+        userId:[String],
         comments:{
             type: mongoose.Types.ObjectId,
             ref: "Collab",

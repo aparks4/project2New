@@ -4,13 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/styles/login.css">
     <title>Login Page</title>
 </head>
 <body>
     <img class="DBlogo" src="https://i.imgur.com/cBxeHWy.png" alt="DB logo">
-    <div>
-        <h1>Login</h1>
+    <div class="login-container">
         <form action="/users/login" method="POST">
             <div>
                 <label for="username">Username</label>
@@ -34,10 +33,11 @@
                     >
                 </div>
             </div>
-            <div>
-                <button>Submit</button>
+            <div class="login-button">
+                <button>Login</button>
             </div>
         </form>
+        <h3>Don't have an account? <a href="/users/register">Sign up here</a></h3>
     </div>
 </body>
 </html>

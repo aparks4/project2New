@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
 .DBlogo {
     max-width: 100px;
     position: absolute;
@@ -23,8 +25,7 @@ a {
     padding: 10px;
 }
 a:hover {
-    border-style: solid;
-    border-radius: 15%;
+    font-size: 28px;
 }
 body {
     background-image: url('https://i.imgur.com/lFx3qYC.jpg');
@@ -52,6 +53,7 @@ body {
     border-radius: 5%;
     background-color: rgb(13, 105, 105, .85);
     margin-right: 15px;
+    min-width: 700px;
     
 }
 .trip-image {
@@ -64,6 +66,9 @@ h3, p {
 .edit-link {
     font-size: 30px;
     margin-bottom: 25px;
+    border: solid;
+    border-radius: 20%;
+    padding: 5px;
 }
 .chat-section {
     display: flex;
@@ -73,6 +78,8 @@ h3, p {
     border-radius: 5%;
     justify-content: flex-start;
     width: 40%;
+    max-height: 700px;
+    overflow-y: scroll;
     background-color: rgb(253, 244, 220, .85);
 }
 h4 {
